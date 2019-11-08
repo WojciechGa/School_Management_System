@@ -14,31 +14,37 @@ public class Student {
     private int feesTotal;
 
     /**
-     *
+     *Tc create a new student by initilizing
+     * fees for every student is $30.0000
+     * Fees paid initialy is 0
      * @param id is for the student unique
      * @param name name of student
      * @param grade grade of student
      */
 
     public Student(int id, String name, int grade){
-        setID(id);
-        setName(name);
+        this.ID  = id;
+        this.name = name;
         setGrade(grade);
+        setFeesPaid(0);
+        setFeesTotal(30000);
     }
+
+    //Not going to alter students's name and student id
+
+
+
+
 
     public int getID() {
         return ID;
-    }
-
-    public void setID(int ID) {
-        this.ID = ID;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void correctName(String name) {
         this.name = name;
     }
 
