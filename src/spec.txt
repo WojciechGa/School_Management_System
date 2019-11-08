@@ -1,0 +1,10 @@
+//School management system
+
+Students, teachers, Funds
+
+keep track of all students fees
+paid fees
+teachers salary
+
+total many earned
+tatal money spent
