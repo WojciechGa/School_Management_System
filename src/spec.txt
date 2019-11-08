@@ -6,5 +6,24 @@ keep track of all students fees
 paid fees
 teachers salary
 
+//school
+students
+teachers
 total many earned
-tatal money spent
+tatal money spent -sallary
+
+//teachers
+id
+name
+sallary
+
+//students
+id
+name
+class
+grade
+fees paid
+total fees
+
+
+
