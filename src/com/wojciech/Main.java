@@ -1,32 +1,37 @@
 package com.wojciech;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Main {
 
     public static void main(String[] args) {
 	// write your code here
+        School ghs = new School("GHS");
 
-        Teacher lizzy = new Teacher(1, "Lizzy", 500);
-        Teacher mellisa = new Teacher(2, "Mellisa", 700);
-        Teacher ben = new Teacher(3, "Ben", 600);
+        Teacher lizzy = new Teacher("Lizzy", 500);
+        Teacher mellisa = new Teacher( "Mellisa", 700);
+        Teacher ben = new Teacher("Ben", 600);
 
-        List<Teacher> teacherList = new ArrayList<>();
-        teacherList.add(lizzy);
-        teacherList.add(mellisa);
-        teacherList.add(ben);
+        Student jon = new Student( "Jon", 5);
+        Student lissy = new Student( "Lissy", 4);
+        Student ken = new Student( "Ken", 3);
 
-        Student jon = new Student(1, "Jon", 5);
-        Student lissy = new Student(2, "Lissy", 4);
-        Student ken = new Student(3, "Ken", 3);
+        System.out.println(lizzy);
+        ghs.addTeacher(lizzy);
+        ghs.addTeacher(mellisa);
+        ghs.addTeacher(ben);
 
-        List<Student> studentList = new ArrayList<>();
-        studentList.add(jon);
-        studentList.add(lissy);
-        studentList.add(ken);
+        System.out.println(lizzy);
+        System.out.println(ben);
 
-        School ghs = new School("GHS", teacherList, studentList);
+        System.out.println(jon);
+
+        ghs.addStudent(jon);
+        ghs.addStudent(lissy);
+        ghs.addStudent(ken);
+
+        System.out.println(jon);
+        System.out.println(lissy);
+        System.out.println(ken);
+
 
         lissy.payFee(5000);
         ghs.showFunds();

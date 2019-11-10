@@ -7,21 +7,19 @@ package com.wojciech;
  */
 public class Teacher {
 
-    private int id;
     private String name;
+    private String id;
     private int salary;
     private int salaryEarned;
 
     /**
      * Create a new teacher object
-     * @param id id for a teacher
      * @param name teacher's name
      * @param salary salary of the teacher
      */
-    public Teacher(int id, String name, int salary){
-        this.id = id;
+    public Teacher(String name, int salary){
+
         this.name = name;
-        setSalary(salary);
         salaryEarned = 0;
     }
 
@@ -38,7 +36,7 @@ public class Teacher {
         this.salary = salary;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 

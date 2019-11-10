@@ -7,7 +7,7 @@ package com.wojciech;
  */
 public class Student {
 
-    private int ID;
+    private String ID;
     private String name;
     private int grade;
     private int feesPaid;
@@ -22,8 +22,7 @@ public class Student {
      * @param grade grade of student
      */
 
-    public Student(int id, String name, int grade){
-        this.ID  = id;
+    public Student(String name, int grade){
         this.name = name;
         setGrade(grade);
         feesPaid = 0;
@@ -32,7 +31,7 @@ public class Student {
 
     //Not going to alter student ID and students's name can be corrected
 
-    public int getID() {
+    public String getID() {
         return ID;
     }
 
@@ -76,6 +75,10 @@ public class Student {
 
     }
 
+    public void setID(Integer ID) {
+        this.ID = "ST" + ID.toString();
+    }
+
     public int getFeesTotal() {
         return feesTotal;
     }
@@ -86,5 +89,10 @@ public class Student {
 
     public int getRemainingFees(){
         return feesTotal - feesPaid;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Student name: %s\nStudent Id: %s",name, getID());
     }
 }

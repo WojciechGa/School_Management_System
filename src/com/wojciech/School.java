@@ -1,5 +1,6 @@
 package com.wojciech;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -9,22 +10,23 @@ import java.util.List;
 public class School {
 
     private String name;
-    private List<Teacher> teachers;
-    private List<Student> students;
+    private List<Teacher> teachers = new ArrayList<>();
+    private List<Student> students = new ArrayList<>();
     private static int totalMoneyEarned;
     private static int totalMoneySpent;
+    private static int teachersId;
+    private static int studentsId;
 
     /**
      * new school created
-     * @param teachers list of teachers in the school
-     * @param students list of students in the school
+     * @param name name of the school
      */
-    public School(String name, List<Teacher> teachers, List<Student> students) {
+    public School(String name) {
         this.name = name;
-        this.teachers = teachers;
-        this.students = students;
-        totalMoneySpent = 0;
         totalMoneyEarned = 0;
+        totalMoneySpent = 0;
+        teachersId = 1;
+        studentsId = 1;
     }
 
     /**
@@ -39,7 +41,7 @@ public class School {
      * add new teacher to the school
      * @param teacher new teacher to be added
      */
-    public void addTeachers(Teacher teacher) {
+    public void addTeacher(Teacher teacher) {
         teachers.add(teacher);
     }
 
@@ -55,7 +57,8 @@ public class School {
      * adds a student to a school
      * @param student the student to be added
      */
-    public void addStudents(Student student) {
+    public void addStudent(Student student) {
+        student.setID(studentsId++);
         students.add(student);
     }
 
@@ -103,4 +106,6 @@ public class School {
     public String getName() {
         return name;
     }
+
+
 }
