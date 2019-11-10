@@ -15,8 +15,8 @@ public class Student {
 
     /**
      *Tc create a new student by initilizing
-     * fees for every student is $30.0000
-     * Fees paid initialy is 0
+     * Fees for every student is $30.0000
+     * Fees paid initially is 0
      * @param id is for the student unique
      * @param name name of student
      * @param grade grade of student
@@ -26,15 +26,11 @@ public class Student {
         this.ID  = id;
         this.name = name;
         setGrade(grade);
-        setFeesPaid(0);
+        feesPaid = 0;
         setFeesTotal(30000);
     }
 
-    //Not going to alter students's name and student id
-
-
-
-
+    //Not going to alter student ID and students's name can be corrected
 
     public int getID() {
         return ID;
@@ -44,6 +40,10 @@ public class Student {
         return name;
     }
 
+    /**
+     * used to correct students name if it was wrong
+     * @param name correct name
+     */
     public void correctName(String name) {
         this.name = name;
     }
@@ -52,6 +52,10 @@ public class Student {
         return grade;
     }
 
+    /**
+     * used to upgrade student's grade
+     * @param grade new grade of the student
+     */
     public void setGrade(int grade) {
         this.grade = grade;
     }
@@ -60,8 +64,14 @@ public class Student {
         return feesPaid;
     }
 
-    public void setFeesPaid(int feesPaid) {
-        this.feesPaid = feesPaid;
+    /**
+     * used to update paid fees paid
+     * add fees to feesPaid
+     * the school is going to receive the funds
+     * @param fees the fees that the student pays
+     */
+    public void updateFeesPaid(int fees) {
+        feesPaid = feesPaid + fees;
     }
 
     public int getFeesTotal() {
