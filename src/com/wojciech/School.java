@@ -8,17 +8,19 @@ import java.util.List;
  */
 public class School {
 
+    private String name;
     private List<Teacher> teachers;
     private List<Student> students;
-    private int totalMoneyEarned;
-    private int totalMoneySpent;
+    private static int totalMoneyEarned;
+    private static int totalMoneySpent;
 
     /**
      * new school created
      * @param teachers list of teachers in the school
      * @param students list of students in the school
      */
-    public School(List<Teacher> teachers, List<Student> students) {
+    public School(String name, List<Teacher> teachers, List<Student> students) {
+        this.name = name;
         this.teachers = teachers;
         this.students = students;
         totalMoneySpent = 0;
@@ -69,8 +71,9 @@ public class School {
      * Adds new earned maney to total money earned
      * @param moneyEarned money to add
      */
-    public void updateTotalMoneyEarned(int moneyEarned) {
-        this.totalMoneyEarned += moneyEarned;
+    public static void updateTotalMoneyEarned(int moneyEarned) {
+
+        totalMoneyEarned += moneyEarned;
     }
 
     /**
@@ -82,11 +85,22 @@ public class School {
     }
 
     /**
-     * update the money spent by the school wich is
+     * update the money spent by the school which is
      * only by salary given to
      * @param moneySpent the money
      */
-    public void updateTotalMoneySpent(int moneySpent) {
-        this.totalMoneySpent += moneySpent;
+    public static void updateTotalMoneySpent(int moneySpent) {
+        totalMoneySpent += moneySpent;
+    }
+
+    //showing school's funds
+    public void showFunds(){
+        System.out.println(getName() + " has earned " + getTotalMoneyEarned() + " $");
+        System.out.println(getName() + " has spent " + getTotalMoneySpent() + " $");
+    }
+
+    //getting school's name
+    public String getName() {
+        return name;
     }
 }
